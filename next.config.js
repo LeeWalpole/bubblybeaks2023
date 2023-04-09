@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  exportPathMap: null,
   experimental: {
     appDir: true,
   },
