@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Product from "./Product";
-// import FavoriteProduct from "../components/Favorites";
+import FavoriteProduct from "../components/Favorites";
 
 function Products() {
   // Set up state variables for products, selected category, favorites, and loading
@@ -16,7 +16,7 @@ function Products() {
 
   // Fetch data from the API and update the products state
   useEffect(() => {
-    fetch("https://bubblybeaks.com/wp-json/api/lists")
+    fetch("http://localhost:10058/wp-json/api/lists")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
