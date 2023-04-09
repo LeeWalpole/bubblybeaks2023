@@ -3,24 +3,34 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Product from "./Product";
 import FavoriteProduct from "../components/Favorites";
-import { getData } from "../api/wordpress";
 
 function Products() {
   // Set up state variables for products, selected category, favorites, and loading
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [favorites, setFavorites] = useState(
-    JSON.parse(localStorage.getItem("favorites")) || []
-  );
+
+  let initialFavorites = [];
+  const storedFavorites = localStorage.getItem("favorites");
+
+  if (typeof window !== "undefined" && storedFavorites) {
+    try {
+      initialFavorites = JSON.parse(storedFavorites);
+    } catch (error) {
+      console.error("Error parsing favorites from localStorage:", error);
+      // Handle the error, e.g. by resetting the value in localStorage
+    }
+  }
+
+  const [favorites, setFavorites] = useState(initialFavorites);
 
   const [loading, setLoading] = useState(true);
 
-  // const wp_api_endpoint = "http://localhost:10058/wp-json/api/lists"; // this works
+  // const wp_api_endpoint = "https://bubblybeaks.com/wp-json/api/lists";
   const wp_api_endpoint = "https://bubblybeaks.com/wp-json/api/lists";
 
   // Fetch data from the API and update the products state
   useEffect(() => {
-    fetch(wp_api_endpoint)
+    fetch("https://bubblybeaks.com/wp-json/api/lists")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);

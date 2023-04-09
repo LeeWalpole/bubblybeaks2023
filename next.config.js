@@ -19,7 +19,7 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://bubblybeaks.com/",
+            value: "bubblybeaks.com",
           },
           {
             key: "Access-Control-Allow-Methods",
