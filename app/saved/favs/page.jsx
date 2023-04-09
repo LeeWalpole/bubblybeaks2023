@@ -1,4 +1,4 @@
-import Product from "../../list/Product";
+import Product from "../../components/Product";
 function Favorites({ favorites, products, handleFavoriteSelection }) {
   return (
     <div>

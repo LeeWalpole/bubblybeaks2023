@@ -1,7 +1,5 @@
-import "../globals.css";
-
 async function getData() {
-  const res = await fetch("http://127.0.0.1:10058/wp-json/custom/v1/product");
+  const res = await fetch("https://bubblybeaks.com/wp-json/api/lists");
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
@@ -18,7 +16,7 @@ export default async function Page() {
   const products = await getData();
 
   return (
-    <main>
+    <main className="main">
       {products.map((product) => (
         <article key={product.id} className="product">
           <h6 className="product-title">{product.title}</h6>

@@ -16,7 +16,7 @@ function Products() {
 
   // Fetch data from the API and update the products state
   useEffect(() => {
-    fetch("https://bubblybeaks.com/wp-json/api/lists")
+    fetch("http://localhost:10058/wp-json/api/lists/")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
