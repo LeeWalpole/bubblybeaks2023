@@ -26,10 +26,9 @@ function Products() {
 
   const [loading, setLoading] = useState(true);
 
+  // const wp_api_endpoint = "http://localhost:10058/wp-json/api/lists/";
   // const wp_api_endpoint = "https://bubblybeaks.com/wp-json/api/lists";
-  const wp_api_endpoint = "https://bubblybeaks.com/wp-json/api/lists";
 
-  /*
   // Fetch data from the API and update the products state
   useEffect(() => {
     fetch("https://bubblybeaks.com/wp-json/api/lists")
@@ -41,7 +40,6 @@ function Products() {
       })
       .catch((error) => console.dir(error));
   }, []);
-*/
 
   // Generate an array of categories based on the products state
   const categories = products

@@ -1,5 +1,6 @@
 "use client";
-import { getData } from "../components/DataWordpress";
+
+import { getData } from "../api/wordpress";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Product from "../list/Product";
@@ -31,8 +32,8 @@ function Products() {
   // Fetch data from the API and update the products state
   useEffect(() => {
     getData()
-      .then((data) => {
-        setProducts(data);
+      .then((res) => {
+        setProducts(res);
         setLoading(false);
       })
       .catch((error) => {
