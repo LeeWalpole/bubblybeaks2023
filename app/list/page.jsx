@@ -14,8 +14,8 @@ function Products() {
 
   const [loading, setLoading] = useState(true);
 
-  const wp_api_endpoint = "http://localhost:10058/wp-json/api/lists"; // this works
-  // const wp_api_endpoint = "https://bubblybeaks.com/wp-json/api/lists"; // this doesn't works
+  // const wp_api_endpoint = "http://localhost:10058/wp-json/api/lists"; // this works
+  const wp_api_endpoint = "https://bubblybeaks.com/wp-json/api/lists"; // this doesn't works
 
   // Fetch data from the API and update the products state
   useEffect(() => {
