@@ -1,10 +1,11 @@
 "use client";
+import { getData } from "../components/DataWordpress";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Product from "../list/Product";
 import FavoriteProduct from "../components/Favorites";
 
-import { getData } from "../api/wordpress";
+// import { getData } from "../api/wordpress";
 
 function Products() {
   // Set up state variables for products, selected category, favorites, and loading

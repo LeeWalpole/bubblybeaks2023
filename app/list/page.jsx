@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Product from "./Product";
 import FavoriteProduct from "../components/Favorites";
+import { getData } from "../api/wordpress";
 
 function Products() {
   // Set up state variables for products, selected category, favorites, and loading
@@ -28,15 +29,19 @@ function Products() {
   // const wp_api_endpoint = "https://bubblybeaks.com/wp-json/api/lists";
   const wp_api_endpoint = "https://bubblybeaks.com/wp-json/api/lists";
 
+  /*
   // Fetch data from the API and update the products state
   useEffect(() => {
     fetch("https://bubblybeaks.com/wp-json/api/lists")
       .then((response) => response.json())
       .then((data) => {
+        console.log({ data });
         setProducts(data);
         setLoading(false);
-      });
-  });
+      })
+      .catch((error) => console.dir(error));
+  }, []);
+*/
 
   // Generate an array of categories based on the products state
   const categories = products

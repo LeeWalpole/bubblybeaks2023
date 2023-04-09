@@ -8,7 +8,7 @@ export default function NavBottom() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/list">Discover</Link>
+          <Link href="/list">Lists</Link>
         </li>
         <li>
           <Link href="/saved">Saved</Link>
