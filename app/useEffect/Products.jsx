@@ -12,7 +12,8 @@ function Products({ products }) {
 
   useEffect(() => {
     setLoading(true);
-    setFavorites(JSON.parse(localStorage.getItem('favorites') || '') || []);
+    const favoriteData = localStorage.getItem('favorites') || '';
+    setFavorites(JSON.parse(favoriteData) || []);
     setLoading(false);
   }, []);
 
