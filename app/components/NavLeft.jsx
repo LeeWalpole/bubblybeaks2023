@@ -1,6 +1,7 @@
-"use client";
-import { useState } from "react";
-import Link from "next/link";
+/* eslint-disable @next/next/no-img-element */
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const NavLeft = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -13,7 +14,10 @@ const NavLeft = () => {
     <nav className="nav-left">
       <ul>
         <li className="nav-left-logo">
-          <img src="http://localhost:10058/wp-content/uploads/BubblyBeaks-Logo-2022-black.png"></img>
+          <img
+            src="http://localhost:10058/wp-content/uploads/BubblyBeaks-Logo-2022-black.png"
+            alt=""
+          />
         </li>
         <li>
           <Link href="/">

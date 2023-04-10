@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable @next/next/no-img-element */
 
 function Product({ product, handleFavoriteSelection, favorites }) {
   return (
@@ -67,7 +67,7 @@ function Product({ product, handleFavoriteSelection, favorites }) {
               title={product.link.title}
               target={product.link.target}
             >
-              {product.link.title ? product.link.title : "Buy Now"}
+              {product.link.title ? product.link.title : 'Buy Now'}
             </a>
           </section>
         </div>

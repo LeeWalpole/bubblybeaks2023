@@ -1,24 +1,23 @@
-import React from "react";
-
+/* eslint-disable @next/next/no-img-element */
 function FavoriteProduct({ product, handleFavoriteSelection, favorites }) {
   <article key={favoriteProduct.id} className="product">
-    <figure class="product-feature">
+    <figure className="product-feature">
       <img src={favoriteProduct.image} alt={favoriteProduct.title} />
     </figure>
-    <section class="product-data">
-      <div class="product-header">
-        <div class="product-header-left">
-          <small class="product-kicker">{favoriteProduct.brand}</small>
-          <h6 class="product-title">{favoriteProduct.title}</h6>
+    <section className="product-data">
+      <div className="product-header">
+        <div className="product-header-left">
+          <small className="product-kicker">{favoriteProduct.brand}</small>
+          <h6 className="product-title">{favoriteProduct.title}</h6>
         </div>
-        <div class="product-header-right">Reviewss</div>
+        <div className="product-header-right">Reviewss</div>
       </div>
-      <div class="product-body">
-        <p class="product-description">{favoriteProduct.description}</p>
+      <div className="product-body">
+        <p className="product-description">{favoriteProduct.description}</p>
       </div>
 
-      <div class="product-buttons-wrapper">
-        <section class="product-buttons">
+      <div className="product-buttons-wrapper">
+        <section className="product-buttons">
           <div
             className="product-fav-button"
             onClick={() => handleFavoriteSelection(favoriteProduct.id)}
@@ -68,7 +67,7 @@ function FavoriteProduct({ product, handleFavoriteSelection, favorites }) {
           >
             {favoriteProduct.link.title
               ? favoriteProduct.link.title
-              : "Buy Now"}
+              : 'Buy Now'}
           </a>
         </section>
       </div>
