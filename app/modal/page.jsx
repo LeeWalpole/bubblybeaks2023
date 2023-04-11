@@ -2,38 +2,15 @@
 
 import React, { useState } from "react";
 import Modal from "../components/Modal";
+import { useModal } from "../components/ModalUse";
 
 const Page = () => {
-  // Define state variable for all modals
-  const [modalIsOpen, setModalIsOpen] = useState({});
-
-  // Function to toggle modal state
-  const toggleModal = (id) => {
-    setModalIsOpen((prevState) => ({
-      ...prevState,
-      [id]: !prevState[id],
-    }));
-  };
-
-  // Function to close modal
-  const handleCloseModal = (id) => {
-    setModalIsOpen((prevState) => ({
-      ...prevState,
-      [id]: false,
-    }));
-  };
-
-  // Function to close multiple modals
-  const closeModals = (ids) => {
-    setModalIsOpen((prevState) => {
-      const newState = { ...prevState };
-      ids.forEach((id) => (newState[id] = false));
-      return newState;
-    });
-  };
+  // useModal component contains modal functionality
+  const { modalIsOpen, toggleModal, handleCloseModal, closeModals } =
+    useModal();
 
   return (
-    <div className="main">
+    <div>
       <button onClick={() => toggleModal("modal-1")}>Open Modal 1</button>
       <button onClick={() => toggleModal("modal-2")}>Open Modal 2</button>
 
