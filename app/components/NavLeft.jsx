@@ -15,7 +15,7 @@ const NavLeft = () => {
       <ul>
         <li className="nav-left-logo">
           <img
-            src="http://localhost:10058/wp-content/uploads/BubblyBeaks-Logo-2022-black.png"
+            src="https://bubblybeaks.com/wp-content/uploads/BubblyBeaks-Logo-2022-black.png"
             alt=""
           />
         </li>
