@@ -13,7 +13,7 @@ const NavLeft = () => {
     <nav className="nav-left">
       <ul>
         <li className="nav-left-logo">
-          <img src="http://localhost:10058/wp-content/uploads/BubblyBeaks-Logo-2022-black.png"></img>
+          <img src="https://bubblybeaks.com/wp-content/uploads/BubblyBeaks-Logo-2022-black.png"></img>
         </li>
         <li>
           <Link href="/">
