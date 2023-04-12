@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styles from "./Modal.module.css";
 import { useModal } from "./ModalUse";
+import { ModalContext } from "./ModalContext";
 
 const Modal = ({ isOpen, handleCloseModal, children }) => {
   // Get the modal root element from the DOM
@@ -15,19 +16,21 @@ const Modal = ({ isOpen, handleCloseModal, children }) => {
   // of the component hierarchy and can therefore appear
   // on top of everything else
   return ReactDOM.createPortal(
-    <div className={styles.modal}>
-      {/* Overlay that covers the whole screen and closes modal when clicked */}
-      <div className={styles.overlay} onClick={handleCloseModal}></div>
-      {/* Actual modal content */}
-      <div className={styles.content}>
-        {/* Button to close the modal */}
-        <button className={styles.close} onClick={handleCloseModal}>
-          X
-        </button>
-        {/* Contents of the modal */}
-        {children}
+    <ModalContext.Provider value={{ handleCloseModal }}>
+      <div className={styles.modal}>
+        {/* Overlay that covers the whole screen and closes modal when clicked */}
+        <div className={styles.overlay} onClick={handleCloseModal}></div>
+        {/* Actual modal content */}
+        <div className={styles.content}>
+          {/* Button to close the modal */}
+          <button className={styles.close} onClick={handleCloseModal}>
+            X
+          </button>
+          {/* Contents of the modal */}
+          {children}
+        </div>
       </div>
-    </div>,
+    </ModalContext.Provider>,
     modalRoot // Render the modal inside the modal root element
   );
 };
