@@ -1,4 +1,5 @@
 import "./globals.css";
+
 import NavTop from "./components/NavTop";
 import NavLeft from "./components/NavLeft";
 import NavBottom from "./components/NavBottom";
