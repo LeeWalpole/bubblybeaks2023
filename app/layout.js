@@ -17,12 +17,12 @@ export default function RootLayout({ children }) {
         content="width=device-width, initial-scale=1.0"
       ></meta>
       <body>
-        <main className="app">
+        <div className="app">
           <NavLeft />
           <NavTop />
-          <div className="main">{children}</div>
+          <main className="main">{children}</main>
           <NavBottom />
-        </main>
+        </div>
       </body>
     </html>
   );
