@@ -1,10 +1,15 @@
+import Image from "next/image";
 /* eslint-disable @next/next/no-img-element */
-
 function Product({ product, handleFavoriteSelection, favorites }) {
   return (
     <article key={product.id} className="product">
       <figure className="product-feature">
-        <img src={product.image} alt={product.title} />
+        <Image
+          src={product.image}
+          alt={product.title}
+          height={100}
+          width={100}
+        />
       </figure>
       <section className="product-data">
         <div className="product-header">
@@ -67,7 +72,7 @@ function Product({ product, handleFavoriteSelection, favorites }) {
               title={product.link.title}
               target={product.link.target}
             >
-              {product.link.title ? product.link.title : 'Buy Now'}
+              {product.link.title ? product.link.title : "Buy Now"}
             </a>
           </section>
         </div>

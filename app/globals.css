@@ -6,6 +6,11 @@
 }
 
 :root {
+  --color-fg: #111;
+  --color-bg: #fff;
+}
+
+:root {
   --navLeftWidth: 300px;
   --mainWidth: 500px;
 }
@@ -79,8 +84,81 @@
   list-style: none;
 }
 
+.nav-bottom svg {
+  height: 32px;
+}
+
 .nav-left {
   display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-left {
+    width: var(--navLeftWidth);
+    height: 100vh;
+    border-right: 1px solid #eee;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 15px 0;
+    display: block;
+  }
+
+  .nav-left ul {
+    display: block;
+    list-style: none;
+    padding: 15px 30px;
+  }
+
+  .nav-left ul li {
+    padding: 15px 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .nav-left ul li:hover {
+    background: #fafafa;
+  }
+
+  .nav-left ul li a {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: var(--color-fg);
+  }
+
+  li.active-nav-left a {
+    font-weight: 700 !important;
+  }
+
+  .nav-left-logo img {
+    height: 32px;
+  }
+
+  .nav-left-logo img:hover {
+    background: none;
+  }
+
+  .nav-left ul svg {
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    padding: 0;
+  }
 }
 
 .main {
@@ -100,47 +178,6 @@
   .nav-top,
   .nav-bottom {
     display: none;
-  }
-
-  .nav-left {
-    width: var(--navLeftWidth);
-    height: 100vh;
-    border-right: 1px solid #eee;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding: 0px;
-    display: block;
-  }
-
-  .nav-left ul {
-    padding: 30px;
-    display: block;
-    list-style: none;
-  }
-
-  .nav-left ul li {
-    padding: 30px;
-    height: 50px;
-    line-height: 50px;
-
-    width: 100%;
-  }
-
-  .nav-left ul a {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .nav-left-logo img {
-    height: 26px;
-  }
-
-  .nav-left ul svg {
-    height: 28px;
-    margin-right: 15px;
   }
 
   .main {

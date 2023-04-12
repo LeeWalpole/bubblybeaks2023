@@ -1,19 +1,19 @@
-/* eslint-disable @next/next/no-img-element */
 // Import necessary modules and components
-'use client';
+"use client";
+import Image from "next/image";
 // Import necessary modules and components
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function Products({ products }) {
   // Set up state variables for products, selected category, favorites, and loading
 
   const [favorites, setFavorites] = useState([]);
-  const [selectedFavoriteCategory, setSelectedFavoriteCategory] = useState('');
+  const [selectedFavoriteCategory, setSelectedFavoriteCategory] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-    const favoriteData = localStorage.getItem('favorites') || '';
+    const favoriteData = localStorage.getItem("favorites") || "";
     if (favoriteData) {
       setFavorites(JSON.parse(favoriteData) || []);
     }
@@ -62,7 +62,7 @@ function Products({ products }) {
       : [...favorites, id];
 
     setFavorites(updatedFavorites);
-    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   }
 
   // This is not a good way
@@ -83,8 +83,8 @@ function Products({ products }) {
             <div className="category-column">
               <ul>
                 <li
-                  onClick={() => handleFavoriteCategorySelection('')}
-                  className={selectedFavoriteCategory === '' ? 'active' : ''}
+                  onClick={() => handleFavoriteCategorySelection("")}
+                  className={selectedFavoriteCategory === "" ? "active" : ""}
                   key="all-favorites"
                 >
                   All Favorites
@@ -95,7 +95,7 @@ function Products({ products }) {
                     key={category}
                     onClick={() => handleFavoriteCategorySelection(category)}
                     className={
-                      selectedFavoriteCategory === category ? 'active' : ''
+                      selectedFavoriteCategory === category ? "active" : ""
                     }
                   >
                     {category}
@@ -111,7 +111,12 @@ function Products({ products }) {
             filteredProducts.map((product) => (
               <article key={product.id} className="product">
                 <figure className="product-feature">
-                  <img src={product.image} alt={product.title} />
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    height={100}
+                    width={100}
+                  />
                 </figure>
                 <section className="product-data">
                   <div className="product-header">
@@ -124,11 +129,11 @@ function Products({ products }) {
                   <div className="product-body">
                     <p className="product-description">{product.description}</p>
                     <p className="product-tags">
-                      {''}
+                      {""}
                       {product.category.map((category, index) => (
                         <span key={index}>
-                          {'#' + category.trim()}
-                          {index < product.category.length - 1 ? ' ' : ''}
+                          {"#" + category.trim()}
+                          {index < product.category.length - 1 ? " " : ""}
                         </span>
                       ))}
                     </p>
@@ -182,7 +187,7 @@ function Products({ products }) {
                         title={product.link.title}
                         target={product.link.target}
                       >
-                        {product.link.title ? product.link.title : 'Buy Now'}
+                        {product.link.title ? product.link.title : "Buy Now"}
                       </a>
                     </section>
                   </div>
