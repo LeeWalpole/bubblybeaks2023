@@ -39,17 +39,11 @@ export const useModal = () => {
   const closeModals = (ids) => {
     setModalIsOpen((prevState) => {
       const newState = { ...prevState };
+      // Set the state of each modal in the given array of ids to false
       ids.forEach((id) => {
         newState[id] = false;
-        const modal = document.querySelector(`#${id}`);
-        if (modal) {
-          const childModals = modal.querySelectorAll(".modal");
-          childModals.forEach((childModal) => {
-            const childModalId = childModal.getAttribute("id");
-            newState[childModalId] = false;
-          });
-        }
       });
+      // Return the updated state
       return newState;
     });
   };
