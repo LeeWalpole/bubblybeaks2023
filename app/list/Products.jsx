@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Product from "./Product";
 
@@ -122,9 +122,11 @@ function Products({ products }) {
             return favoriteProduct ? (
               <article key={favoriteProduct.id} className="product">
                 <figure className="product-feature">
-                  <img
+                  <Image
                     src={favoriteProduct.image}
                     alt={favoriteProduct.title}
+                    height={100}
+                    width={100}
                   />
                 </figure>
                 <section className="product-data">

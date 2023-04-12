@@ -16,8 +16,8 @@ export default function NavTop() {
           <Image
             src="https://bubblybeaks.com/wp-content/uploads/BubblyBeaks-Logo-2022-black.png"
             alt="Logo"
-            height="100"
-            width="300"
+            height="32"
+            width="215"
           />
         </Link>
         <li>

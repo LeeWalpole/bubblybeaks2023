@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -21,9 +22,11 @@ const NavLeft = () => {
         <ul>
           <li className="nav-left-logo">
             <Link href="/">
-              <img
+              <Image
                 src="https://bubblybeaks.com/wp-content/uploads/BubblyBeaks-Logo-2022-black.png"
                 alt=""
+                height={32}
+                width={215}
               />
             </Link>
           </li>

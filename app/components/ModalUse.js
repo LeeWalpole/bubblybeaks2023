@@ -1,22 +1,35 @@
-"use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export const useModal = () => {
   // Define state variable for all modals
   const [modalIsOpen, setModalIsOpen] = useState({});
+  // Create a ref for the modalRoot
+  const modalRootRef = useRef(null);
 
   // Create a modal root element once when the hook is first mounted
   useEffect(() => {
-    // Create a new div element to serve as the modal root
-    const modalRoot = document.createElement("div");
-    // Add a class to the modal root element
-    modalRoot.classList.add("modal-root");
-    // Append the modal root element to the end of the document body
-    document.body.appendChild(modalRoot);
+    // Check if modalRootRef is not already set
+    if (!modalRootRef.current) {
+      // Create a new div element to serve as the modal root
+      const modalRoot = document.createElement("div");
+      // Add a class to the modal root element
+      modalRoot.classList.add("modal-root");
+      // Append the modal root element to the end of the document body
+      document.body.appendChild(modalRoot);
+      // Set modalRootRef to the created modalRoot
+      modalRootRef.current = modalRoot;
+    }
     // Return a cleanup function that removes the modal root element
     // when the hook is unmounted
     return () => {
-      document.body.removeChild(modalRoot);
+      // Check if modalRootRef.current exists and is a child of document.body
+      if (
+        modalRootRef.current &&
+        document.body.contains(modalRootRef.current)
+      ) {
+        document.body.removeChild(modalRootRef.current);
+        modalRootRef.current = null;
+      }
     };
   }, []);
 
