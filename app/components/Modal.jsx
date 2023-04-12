@@ -1,13 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import ReactDOM from "react-dom";
-import styles from "./Modal.module.css";
-import { useModal } from "./ModalUse";
+import styles from './Modal.module.css';
 
 const Modal = ({ isOpen, handleCloseModal, children }) => {
   // Get the modal root element from the DOM
-  const modalRoot = document.querySelector(".modal-root");
 
   // If the modal is not open, don't render anything
   if (!isOpen) return null;
@@ -16,7 +12,7 @@ const Modal = ({ isOpen, handleCloseModal, children }) => {
   // as a child of the modal root element, which is outside
   // of the component hierarchy and can therefore appear
   // on top of everything else
-  return ReactDOM.createPortal(
+  return (
     <div className={styles.modal}>
       {/* Overlay that covers the whole screen and closes modal when clicked */}
       <div className={styles.overlay} onClick={handleCloseModal}></div>
@@ -29,8 +25,7 @@ const Modal = ({ isOpen, handleCloseModal, children }) => {
         {/* Contents of the modal */}
         {children}
       </div>
-    </div>,
-    modalRoot // Render the modal inside the modal root element
+    </div>
   );
 };
 
