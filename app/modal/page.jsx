@@ -5,7 +5,7 @@ import Modal from "../components/Modal";
 import { useModal } from "../components/ModalUse";
 import { ModalProvider } from "../components/ModalContext";
 
-const Page = () => {
+const TestPage = () => {
   // useModal component contains modal functionality
   const { modalIsOpen, toggleModal, handleCloseModal, closeModals } =
     useModal();

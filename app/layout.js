@@ -1,9 +1,7 @@
 import "./globals.css";
-
 import NavTop from "./components/NavTop";
 import NavLeft from "./components/NavLeft";
 import NavBottom from "./components/NavBottom";
-import { ModalProvider } from "./components/ModalContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,14 +16,12 @@ export default function RootLayout({ children }) {
         content="width=device-width, initial-scale=1.0"
       ></meta>
       <body>
-        <ModalProvider>
-          <main className="app">
-            <NavLeft />
-            <NavTop />
-            <div className="main">{children}</div>
-            <NavBottom />
-          </main>
-        </ModalProvider>
+        <main className="app">
+          <NavLeft />
+          <NavTop />
+          <div className="main">{children}</div>
+          <NavBottom />
+        </main>
       </body>
     </html>
   );

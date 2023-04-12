@@ -155,14 +155,19 @@ const NavLeft = () => {
               <button onClick={() => toggleModal("modal-4")}>
                 Open Modal 4
               </button>
+
+              <Modal
+                isOpen={modalIsOpen["modal-4"]}
+                handleCloseModal={() => handleCloseModal("modal-4")}
+              >
+                <h2>Modal 4</h2>
+                <p>Modal 4 contents go here.</p>
+              </Modal>
+
+              <button onClick={() => toggleModal("modal-2")}>
+                Open Modal 2
+              </button>
             </div>
-            <Modal
-              isOpen={modalIsOpen["modal-4"]}
-              handleCloseModal={() => handleCloseModal("modal-4")}
-            >
-              <h2>Modal 4</h2>
-              <p>Modal 4 contents go here.</p>
-            </Modal>
           </Modal>
         </ul>
       </nav>
